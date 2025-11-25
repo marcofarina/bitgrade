@@ -1,0 +1,5 @@
+{
+  "name": "BitGrade",
+  "description": "Strumento per il calcolo del voto di verifiche espresse in punti e divise in livelli di complessità",
+  "requestFramePermissions": []
+}
