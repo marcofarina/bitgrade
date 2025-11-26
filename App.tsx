@@ -27,7 +27,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-zinc-100 selection:bg-indigo-500/30 font-sans">
+    <div className="h-[100dvh] w-full overflow-hidden bg-black text-zinc-100 selection:bg-indigo-500/30 font-sans relative">
        {/* Ambient Background Glow */}
        <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <div className="absolute -top-20 -left-20 w-96 h-96 bg-indigo-600/20 rounded-full blur-[100px]" />
@@ -35,18 +35,18 @@ const App: React.FC = () => {
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-600/10 rounded-full blur-[120px]" />
        </div>
 
-       {/* Help Button (Fixed) */}
+       {/* Help Button (Moved to Left) */}
        <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsHelpOpen(true)}
-        className="fixed top-4 right-4 z-40 p-3 bg-zinc-900/80 backdrop-blur-md border border-zinc-700 rounded-full text-zinc-400 hover:text-white hover:border-zinc-500 transition-colors shadow-lg"
+        className="fixed top-4 left-4 z-50 p-3 bg-zinc-900/80 backdrop-blur-md border border-zinc-700 rounded-full text-zinc-400 hover:text-white hover:border-zinc-500 transition-colors shadow-lg"
         aria-label="Informazioni"
        >
          <Info size={24} />
        </motion.button>
 
-      <div className="relative z-10 container mx-auto px-4 py-8 min-h-screen flex flex-col justify-center">
+      <div className="relative z-10 w-full h-full max-w-5xl mx-auto px-4 flex flex-col justify-center">
         <AnimatePresence mode="wait">
           {!config.isConfigured ? (
             <SetupScreen key="setup" onComplete={handleSetupComplete} />
